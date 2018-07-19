@@ -25,6 +25,49 @@ paths:
       responses:
         405:
           description: "Invalid input"
+  /communication:
+    post:
+      summary: Creates an existing Spacecraft_Communication entity
+      description: Creates an existing Spacecraft_Communication entity
+      parameters:
+      - in: "body"
+        description: Communication object that are to be added to the server
+        required: true
+        schema:
+          $ref: "#/definitions/communication"
+      responses:
+        200:
+          description: "Added object successfully"
+          schema:
+            $ref: '#/definitions/communication'
+    put:
+      summary: Updates an existing Spacecraft_Communication entity
+      description: Updates an existing Spacecraft_Communication entity
+      parameters:
+        - in: "body"
+          description: Communication object that are to be added to the server
+          required: true
+          schema:
+            $ref: "#/definitions/communication"
+      responses:
+        200:
+          description: "Updated object successfully"
+          schema:
+            $ref: '#/definitions/communication'
+    get:
+      summary: Fetches all communication entities
+      description: Fetches all communication entities
+      responses:
+        200:
+          description: "Updated object successfully"
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/communication'
+
+
+
+
 definitions:
   communication:
     type: object
@@ -33,7 +76,7 @@ definitions:
         $ref: "link here"
       mass:
         $ref: "link here"
-      cost : 
+      cost :
         $ref: "link here"
       minWorkingTemp:
         $ref: "link here"
@@ -46,7 +89,7 @@ definitions:
         $ref: "link here"
       mass:
         $ref: "link here"
-      cost : 
+      cost :
         $ref: "link here"
       minWorkingTemp:
         $ref: "link here"
@@ -59,7 +102,7 @@ definitions:
         $ref: "link here"
       mass:
         $ref: "link here"
-      cost : 
+      cost :
         $ref: "link here"
       minWorkingTemp:
         $ref: "link here"
@@ -72,7 +115,7 @@ definitions:
         $ref: "link here"
       mass:
         $ref: "link here"
-      cost : 
+      cost :
         $ref: "link here"
       minWorkingTemp:
         $ref: "link here"
@@ -87,7 +130,7 @@ definitions:
         $ref: "link here"
       mass:
         $ref: "link here"
-      cost : 
+      cost :
         $ref: "link here"
       minWorkingTemp:
         $ref: "link here"
@@ -102,7 +145,7 @@ definitions:
         $ref: "link here"
       mass:
         $ref: "link here"
-      cost : 
+      cost :
         $ref: "link here"
       minWorkingTemp:
         $ref: "link here"
@@ -113,7 +156,7 @@ definitions:
     properties:
       mass:
         $ref: "link here"
-      cost : 
+      cost :
         $ref: "link here"
       minWorkingTemp:
         $ref: "link here"
@@ -126,7 +169,7 @@ definitions:
         $ref: "link here"
       mass:
         $ref: "link here"
-      cost : 
+      cost :
         $ref: "link here"
       minWorkingTemp:
         $ref: "link here"
@@ -139,19 +182,18 @@ definitions:
         $ref: "link here"
       mass:
         $ref: "link here"
-      cost : 
+      cost :
         $ref: "link here"
       minWorkingTemp:
         $ref: "link here"
       maxWorkingTemp:
         $ref: "link here"
-    
-      
-    
-  
-      
-    
-    
-        
-      
+
+
+
+
+
+
+
+
 
