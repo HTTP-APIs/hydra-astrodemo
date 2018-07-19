@@ -1,0 +1,157 @@
+swagger: '2.0'
+info:
+  version: 0.0.1
+  title: "AstroDemo"
+  description: "AstroDemo"
+host: "astrodemo.com"
+basePath: "/api"
+schemes: 
+- http
+- https
+paths:
+  /pet:
+    post:
+      tags:
+      - "pet"
+      summary: "Add a new pet to the store"
+      description: ""
+      operationId: "addPet"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        405:
+          description: "Invalid input"
+definitions:
+  communication:
+    type: object
+    properties:
+      power:
+        $ref: "link here"
+      mass:
+        $ref: "link here"
+      cost : 
+        $ref: "link here"
+      minWorkingTemp:
+        $ref: "link here"
+      maxWorkingTemp:
+        $ref: "link here"
+  propulsion:
+    type: object
+    properties:
+      power:
+        $ref: "link here"
+      mass:
+        $ref: "link here"
+      cost : 
+        $ref: "link here"
+      minWorkingTemp:
+        $ref: "link here"
+      maxWorkingTemp:
+        $ref: "link here"
+  detector:
+    type: object
+    properties:
+      power:
+        $ref: "link here"
+      mass:
+        $ref: "link here"
+      cost : 
+        $ref: "link here"
+      minWorkingTemp:
+        $ref: "link here"
+      maxWorkingTemp:
+        $ref: "link here"
+  primaryPower:
+    type: object
+    properties:
+      power:
+        $ref: "link here"
+      mass:
+        $ref: "link here"
+      cost : 
+        $ref: "link here"
+      minWorkingTemp:
+        $ref: "link here"
+      maxWorkingTemp:
+        $ref: "link here"
+      density:
+        $ref: "link here"
+  backupPower:
+    type: object
+    properties:
+      power:
+        $ref: "link here"
+      mass:
+        $ref: "link here"
+      cost : 
+        $ref: "link here"
+      minWorkingTemp:
+        $ref: "link here"
+      maxWorkingTemp:
+        $ref: "link here"
+      density:
+        $ref: "link here"
+  thermal:
+      type: object
+      properties:
+      power:
+        $ref: "link here"
+      mass:
+        $ref: "link here"
+      cost : 
+        $ref: "link here"
+      minWorkingTemp:
+        $ref: "link here"
+      maxWorkingTemp:
+        $ref: "link here"
+  structure:
+    type: object
+    properties:
+      mass:
+        $ref: "link here"
+      cost : 
+        $ref: "link here"
+      minWorkingTemp:
+        $ref: "link here"
+      maxWorkingTemp:
+        $ref: "link here"
+  commandAndData:
+    type: object
+    properties:
+      power:
+        $ref: "link here"
+      mass:
+        $ref: "link here"
+      cost : 
+        $ref: "link here"
+      minWorkingTemp:
+        $ref: "link here"
+      maxWorkingTemp:
+        $ref: "link here"
+  Attitude:
+    type: object
+    properties:
+      power:
+        $ref: "link here"
+      mass:
+        $ref: "link here"
+      cost : 
+        $ref: "link here"
+      minWorkingTemp:
+        $ref: "link here"
+      maxWorkingTemp:
+        $ref: "link here"
+    
+      
+    
+  
+      
+    
+    
+        
+      
+
