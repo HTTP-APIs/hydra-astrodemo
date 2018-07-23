@@ -1,252 +1,132 @@
 swagger: '2.0'
 info:
-  version: 0.0.1
-  title: "AstroDemo"
-  description: "AstroDemo"
-host: "astrodemo.com"
-basePath: "/api"
-schemes: 
-- http
-- https
+    version: 0.0.1
+    title: AstroDemo
+    description: AstroDemo
+host: astrodemo.com
+basePath: /api
+schemes:
+    - http
+    - https
 paths:
-  /communication:
-    post:
-      summary: Creates an existing Spacecraft_Communication entity
-      description: Creates an existing Spacecraft_Communication entity
-      parameters:
-      - in: "body"
-        description: Communication object that are to be added to the server
-        required: true
-        schema:
-          $ref: "#/definitions/communication"
-      responses:
-        200:
-          description: "Added object successfully"
-    put:
-      summary: Updates an existing Spacecraft_Communication entity
-      description: Updates an existing Spacecraft_Communication entity
-      parameters:
-        - in: "body"
-          description: Communication object that are to be added to the server
-          required: true
-          schema:
-            $ref: "#/definitions/communication"
-        - in: path
-          description: Id of object that has to be updated
-          required: true
-          schema:
-            type: integer
-      responses:
-        200:
-          description: "Updated object successfully"
-
-    get:
-      summary: Fetches all communication entities
-      description: Fetches all communication entities
-      responses:
-        200:
-          description: "Fetched Objects successfully "
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/communication'
-    delete:
-      summary: Deletes object
-      description: Deletes object
-      parameters:
-        - in: path
-          description: Id of object that has to be deleted
-          required: true
-          schema:
-            type: integer
-      responses:
-        200:
-          description: "successfully deleted object"
-  /propulsion:
-    post:
-      summary: Add propulsion object
-      description: Add propulsion object
-      parameters:
-      - in: "body"
-        description: Propulsion object that are to be added to the server
-        required: true
-        schema:
-          $ref: "#/definitions/propulsion"
-      responses:
-        200:
-          description: "Added object successfully"
-    put:
-      summary: Update propulsion object
-      description: Update propulsion object
-      parameters:
-      - in: "body"
-        description: Propulsion object that to be updated
-        required: true
-        schema:
-          $ref: "#/definitions/propulsion"
-      - in: path
-        description: "Id of object that has to be updated ""
-        required: true
-        schema:
-          type: integer
-      responses:
-        200:
-          description: "Updated object successfully"
-    get:
-      summary: Fetches all Propulsion entities
-      description: Fetches all propulsion entities
-      responses:
-        200:
-          description: "Fetched Objects successfully "
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/propulsion'
-    delete:
-      summary: Deletes object
-      description: Deletes object
-      parameters:
-        - in: path
-          description: Id of object that has to be deleted
-          required: true
-          schema:
-            type: integer
-      responses:
-        200:
-          description: "successfully deleted object"
-
-
-
-
-
-
-
+    /communication:
+        post:
+            summary: 'Creates an existing Spacecraft_Communication entity'
+            description: 'Creates an existing Spacecraft_Communication entity'
+            parameters: [{in: body, description: 'Communication object that are to be added to the server', required: true, schema: {$ref: '#/definitions/communication'}}]
+            responses: {'200': {description: 'Added object successfully'}}
+        put:
+            summary: 'Updates an existing Spacecraft_Communication entity'
+            description: 'Updates an existing Spacecraft_Communication entity'
+            parameters: [{in: body, description: 'Communication object that are to be added to the server', required: true, schema: {$ref: '#/definitions/communication'}}, {in: path, description: 'Id of object that has to be updated', required: true, schema: {type: integer}}]
+            responses: {'200': {description: 'Updated object successfully'}}
+        get:
+            summary: 'Fetches all communication entities'
+            description: 'Fetches all communication entities'
+            parameters: [{in: body, description: 'Id of object that has to be deleted', required: true, schema: {type: integer}}]
+            responses: {'200': {description: 'Fetched Objects successfully ', schema: {type: array, items: {$ref: '#/definitions/communication'}}}}
+        delete:
+            summary: 'Deletes object'
+            description: 'Deletes object'
+            parameters: [{in: body, description: 'Id of object that has to be deleted', required: true, schema: {type: integer}}]
+            responses: {'200': {description: 'successfully deleted object'}}
+    /propulsion:
+        post:
+            summary: 'Add propulsion object'
+            description: 'Add propulsion object'
+            parameters: [{in: body, description: 'Propulsion object that are to be added to the server', required: true, schema: {$ref: '#/definitions/propulsion'}}]
+            responses: {'200': {description: 'Added object successfully'}}
+        put:
+            summary: 'Update propulsion object'
+            description: 'Update propulsion object'
+            parameters: [{in: body, description: 'Propulsion object that to be updated', required: true, s  chema: {$ref: '#/definitions/propulsion'}}, {in: path, description: 'Id of object that has to be updated', required: true, schema: {type: integer}}]
+            responses: {'200': {description: 'Updated object successfully'}}
+        get:
+            summary: 'Fetches all Propulsion entities'
+            description: 'Fetches all propulsion entities'
+            parameters: [{in: body, description: 'Id of object that has to be deleted', required: true, schema: {type: integer}}]
+            responses: {'200': {description: 'Fetched Objects successfully ', schema: {type: array, items: {$ref: '#/definitions/propulsion'}}}}
+        delete:
+            summary: 'Deletes object'
+            description: 'Deletes object'
+            parameters: [{in: body, description: 'Id of object that has to be deleted', required: true, schema: {type: integer}}]
+            responses: {'200': {description: 'successfully deleted object'}}
 definitions:
-  communication:
-    type: object
-    properties:
-      power:
-        $ref: "link here"
-      mass:
-        $ref: "link here"
-      cost :
-        $ref: "link here"
-      minWorkingTemp:
-        $ref: "link here"
-      maxWorkingTemp:
-        $ref: "link here"
-  propulsion:
-    type: object
-    properties:
-      power:
-        $ref: "link here"
-      mass:
-        $ref: "link here"
-      cost :
-        $ref: "link here"
-      minWorkingTemp:
-        $ref: "link here"
-      maxWorkingTemp:
-        $ref: "link here"
-  detector:
-    type: object
-    properties:
-      power:
-        $ref: "link here"
-      mass:
-        $ref: "link here"
-      cost :
-        $ref: "link here"
-      minWorkingTemp:
-        $ref: "link here"
-      maxWorkingTemp:
-        $ref: "link here"
-  primaryPower:
-    type: object
-    properties:
-      power:
-        $ref: "link here"
-      mass:
-        $ref: "link here"
-      cost :
-        $ref: "link here"
-      minWorkingTemp:
-        $ref: "link here"
-      maxWorkingTemp:
-        $ref: "link here"
-      density:
-        $ref: "link here"
-  backupPower:
-    type: object
-    properties:
-      power:
-        $ref: "link here"
-      mass:
-        $ref: "link here"
-      cost :
-        $ref: "link here"
-      minWorkingTemp:
-        $ref: "link here"
-      maxWorkingTemp:
-        $ref: "link here"
-      density:
-        $ref: "link here"
-  thermal:
-      type: object
-      properties:
-      power:
-        $ref: "link here"
-      mass:
-        $ref: "link here"
-      cost :
-        $ref: "link here"
-      minWorkingTemp:
-        $ref: "link here"
-      maxWorkingTemp:
-        $ref: "link here"
-  structure:
-    type: object
-    properties:
-      mass:
-        $ref: "link here"
-      cost :
-        $ref: "link here"
-      minWorkingTemp:
-        $ref: "link here"
-      maxWorkingTemp:
-        $ref: "link here"
-  commandAndData:
-    type: object
-    properties:
-      power:
-        $ref: "link here"
-      mass:
-        $ref: "link here"
-      cost :
-        $ref: "link here"
-      minWorkingTemp:
-        $ref: "link here"
-      maxWorkingTemp:
-        $ref: "link here"
-  Attitude:
-    type: object
-    properties:
-      power:
-        $ref: "link here"
-      mass:
-        $ref: "link here"
-      cost :
-        $ref: "link here"
-      minWorkingTemp:
-        $ref: "link here"
-      maxWorkingTemp:
-        $ref: "link here"
-
-
-
-
-
-
-
-
-
+    communication:
+        type: object
+        properties:
+            power: {$ref: }
+            mass: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            cost: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            minWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            maxWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+    propulsion:
+        type: object
+        properties:
+            power: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            mass: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            cost: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            minWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            maxWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+    detector:
+        type: object
+        properties:
+            power: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            mass: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            cost: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            minWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            maxWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+    primaryPower:
+        type: object
+        properties:
+            power: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            mass: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            cost: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            minWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            maxWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            density: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+    backupPower:
+        type: object
+        properties:
+            power: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            mass: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            cost: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            minWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            maxWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            density: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+    thermal:
+        type: object
+        properties: null
+        power:
+            $ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'
+        mass:
+            $ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'
+        cost:
+            $ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'
+        minWorkingTemp:
+            $ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'
+        maxWorkingTemp:
+            $ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'
+    structure:
+        type: object
+        properties:
+            mass: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            cost: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            minWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            maxWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+    commandAndData:
+        type: object
+        properties:
+            power: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            mass: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            cost: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            minWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            maxWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+    Attitude:
+        type: object
+        properties:
+            power: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            mass: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            cost: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            minWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}
+            maxWorkingTemp: {$ref: 'https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json'}

@@ -1,0 +1,1 @@
+-e git+https://github.com/HTTP-APIs/hydrus.git@develop#egg=hydrus
