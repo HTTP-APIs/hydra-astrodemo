@@ -1,1 +1,1 @@
--e git+https://github.com/HTTP-APIs/hydrus.git@develop#egg=hydrus
+-e git+https://github.com/vaibhavchellani/hydrus.git@fixing_parser#egg=hydrus
