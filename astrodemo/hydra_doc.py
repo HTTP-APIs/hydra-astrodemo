@@ -70,23 +70,23 @@ doc = {
                     "title": "Add propulsion object"
                 },
                 {
-                    "@type": "http://schema.org/UpdateAction",
-                    "expects": "null",
+                    "@type": "http://schema.org/FindAction",
+                    "expects": "https://schema.org/Integer",
                     "method": "GET",
                     "possibleStatus": [
                         {
-                            "description": "Success",
+                            "description": "Fetched Objects successfully ",
                             "statusCode": 200
                         }
                     ],
                     "returns": "vocab:propulsion",
-                    "title": "Add propulsion object"
+                    "title": "Fetches all Propulsion entities"
                 }
             ],
             "supportedProperty": [
                 {
                     "@type": "SupportedProperty",
-                    "property": "vocab:power",
+                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
                     "readonly": "true",
                     "required": "false",
                     "title": "power",
@@ -94,7 +94,7 @@ doc = {
                 },
                 {
                     "@type": "SupportedProperty",
-                    "property": "vocab:mass",
+                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
                     "readonly": "true",
                     "required": "false",
                     "title": "mass",
@@ -102,7 +102,7 @@ doc = {
                 },
                 {
                     "@type": "SupportedProperty",
-                    "property": "vocab:cost",
+                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
                     "readonly": "true",
                     "required": "false",
                     "title": "cost",
@@ -110,7 +110,7 @@ doc = {
                 },
                 {
                     "@type": "SupportedProperty",
-                    "property": "vocab:minWorkingTemp",
+                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
                     "readonly": "true",
                     "required": "false",
                     "title": "minWorkingTemp",
@@ -118,7 +118,7 @@ doc = {
                 },
                 {
                     "@type": "SupportedProperty",
-                    "property": "vocab:maxWorkingTemp",
+                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
                     "readonly": "true",
                     "required": "false",
                     "title": "maxWorkingTemp",
@@ -146,17 +146,30 @@ doc = {
                     "title": "Creates an existing Spacecraft_Communication entity"
                 },
                 {
-                    "@type": "http://schema.org/UpdateAction",
-                    "expects": "null",
+                    "@type": "http://schema.org/AddAction",
+                    "expects": "vocab:communication",
+                    "method": "PUT",
+                    "possibleStatus": [
+                        {
+                            "description": "Updated object successfully",
+                            "statusCode": 200
+                        }
+                    ],
+                    "returns": "null",
+                    "title": "Updates an existing Spacecraft_Communication entity"
+                },
+                {
+                    "@type": "http://schema.org/FindAction",
+                    "expects": "https://schema.org/Integer",
                     "method": "GET",
                     "possibleStatus": [
                         {
-                            "description": "Success",
+                            "description": "Fetched Objects successfully ",
                             "statusCode": 200
                         }
                     ],
                     "returns": "vocab:communication",
-                    "title": "Add propulsion object"
+                    "title": "Fetches all communication entities"
                 }
             ],
             "supportedProperty": [
@@ -170,7 +183,7 @@ doc = {
                 },
                 {
                     "@type": "SupportedProperty",
-                    "property": "vocab:mass",
+                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
                     "readonly": "true",
                     "required": "false",
                     "title": "mass",
@@ -178,7 +191,7 @@ doc = {
                 },
                 {
                     "@type": "SupportedProperty",
-                    "property": "vocab:cost",
+                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
                     "readonly": "true",
                     "required": "false",
                     "title": "cost",
@@ -186,7 +199,7 @@ doc = {
                 },
                 {
                     "@type": "SupportedProperty",
-                    "property": "vocab:minWorkingTemp",
+                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
                     "readonly": "true",
                     "required": "false",
                     "title": "minWorkingTemp",
@@ -194,7 +207,7 @@ doc = {
                 },
                 {
                     "@type": "SupportedProperty",
-                    "property": "vocab:maxWorkingTemp",
+                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
                     "readonly": "true",
                     "required": "false",
                     "title": "maxWorkingTemp",
