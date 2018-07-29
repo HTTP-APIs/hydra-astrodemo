@@ -9,7 +9,7 @@ schemes:
     - http
     - https
 paths:
-    /communication:
+    /communicationCollection:
         post:
             summary: 'Creates an existing Spacecraft_Communication entity'
             description: 'Creates an existing Spacecraft_Communication entity'
@@ -30,7 +30,7 @@ paths:
             description: 'Deletes object'
             parameters: [{in: body, description: 'Id of object that has to be deleted', required: true, schema: {type: integer}}]
             responses: {'200': {description: 'successfully deleted object'}}
-    /propulsion:
+    /propulsionCollection:
         post:
             summary: 'Add propulsion object'
             description: 'Add propulsion object'
