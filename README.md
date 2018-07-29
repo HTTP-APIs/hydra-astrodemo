@@ -9,7 +9,7 @@ For execution of the demo you need to run some scripts.
 
 then open new terminal and run:
   
-    ./localhost1
+    ./redis_setup.sh
 
 then open again new terminal and run:
   
