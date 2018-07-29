@@ -1,1 +1,1 @@
-python -m astrodemo.main
+python -m main
