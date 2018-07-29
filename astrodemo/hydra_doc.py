@@ -52,82 +52,6 @@ doc = {
     "possibleStatus": [],
     "supportedClass": [
         {
-            "@id": "vocab:propulsion",
-            "@type": "hydra:Class",
-            "description": "propulsion",
-            "supportedOperation": [
-                {
-                    "@type": "http://schema.org/UpdateAction",
-                    "expects": "vocab:propulsion",
-                    "method": "POST",
-                    "possibleStatus": [
-                        {
-                            "description": "Added object successfully",
-                            "statusCode": 200
-                        }
-                    ],
-                    "returns": "null",
-                    "title": "Add propulsion object"
-                },
-                {
-                    "@type": "http://schema.org/FindAction",
-                    "expects": "https://schema.org/Integer",
-                    "method": "GET",
-                    "possibleStatus": [
-                        {
-                            "description": "Fetched Objects successfully ",
-                            "statusCode": 200
-                        }
-                    ],
-                    "returns": "vocab:propulsion",
-                    "title": "Fetches all Propulsion entities"
-                }
-            ],
-            "supportedProperty": [
-                {
-                    "@type": "SupportedProperty",
-                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
-                    "readonly": "true",
-                    "required": "false",
-                    "title": "power",
-                    "writeonly": "true"
-                },
-                {
-                    "@type": "SupportedProperty",
-                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
-                    "readonly": "true",
-                    "required": "false",
-                    "title": "mass",
-                    "writeonly": "true"
-                },
-                {
-                    "@type": "SupportedProperty",
-                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
-                    "readonly": "true",
-                    "required": "false",
-                    "title": "cost",
-                    "writeonly": "true"
-                },
-                {
-                    "@type": "SupportedProperty",
-                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
-                    "readonly": "true",
-                    "required": "false",
-                    "title": "minWorkingTemp",
-                    "writeonly": "true"
-                },
-                {
-                    "@type": "SupportedProperty",
-                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
-                    "readonly": "true",
-                    "required": "false",
-                    "title": "maxWorkingTemp",
-                    "writeonly": "true"
-                }
-            ],
-            "title": "propulsion"
-        },
-        {
             "@id": "vocab:communication",
             "@type": "hydra:Class",
             "description": "communication",
@@ -217,6 +141,82 @@ doc = {
             "title": "communication"
         },
         {
+            "@id": "vocab:propulsion",
+            "@type": "hydra:Class",
+            "description": "propulsion",
+            "supportedOperation": [
+                {
+                    "@type": "http://schema.org/UpdateAction",
+                    "expects": "vocab:propulsion",
+                    "method": "POST",
+                    "possibleStatus": [
+                        {
+                            "description": "Added object successfully",
+                            "statusCode": 200
+                        }
+                    ],
+                    "returns": "null",
+                    "title": "Add propulsion object"
+                },
+                {
+                    "@type": "http://schema.org/FindAction",
+                    "expects": "https://schema.org/Integer",
+                    "method": "GET",
+                    "possibleStatus": [
+                        {
+                            "description": "Fetched Objects successfully ",
+                            "statusCode": 200
+                        }
+                    ],
+                    "returns": "vocab:propulsion",
+                    "title": "Fetches all Propulsion entities"
+                }
+            ],
+            "supportedProperty": [
+                {
+                    "@type": "SupportedProperty",
+                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
+                    "readonly": "true",
+                    "required": "false",
+                    "title": "power",
+                    "writeonly": "true"
+                },
+                {
+                    "@type": "SupportedProperty",
+                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
+                    "readonly": "true",
+                    "required": "false",
+                    "title": "mass",
+                    "writeonly": "true"
+                },
+                {
+                    "@type": "SupportedProperty",
+                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
+                    "readonly": "true",
+                    "required": "false",
+                    "title": "cost",
+                    "writeonly": "true"
+                },
+                {
+                    "@type": "SupportedProperty",
+                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
+                    "readonly": "true",
+                    "required": "false",
+                    "title": "minWorkingTemp",
+                    "writeonly": "true"
+                },
+                {
+                    "@type": "SupportedProperty",
+                    "property": "https://github.com/chronos-pramantha/RDFvocab/blob/master/ld%2Bjson/SubSystems.json",
+                    "readonly": "true",
+                    "required": "false",
+                    "title": "maxWorkingTemp",
+                    "writeonly": "true"
+                }
+            ],
+            "title": "propulsion"
+        },
+        {
             "@id": "http://www.w3.org/ns/hydra/core#Collection",
             "@type": "hydra:Class",
             "description": "null",
@@ -240,49 +240,6 @@ doc = {
             "supportedOperation": [],
             "supportedProperty": [],
             "title": "Resource"
-        },
-        {
-            "@id": "vocab:propulsionCollection",
-            "@type": "hydra:Class",
-            "description": "A collection of propulsion",
-            "subClassOf": "http://www.w3.org/ns/hydra/core#Collection",
-            "supportedOperation": [
-                {
-                    "@id": "_:propulsion_collection_retrieve",
-                    "@type": "http://schema.org/FindAction",
-                    "description": "Retrieves all propulsion entities",
-                    "expects": "null",
-                    "method": "GET",
-                    "returns": "vocab:propulsionCollection",
-                    "statusCodes": []
-                },
-                {
-                    "@id": "_:propulsion_create",
-                    "@type": "http://schema.org/AddAction",
-                    "description": "Create new propulsion entitity",
-                    "expects": "vocab:propulsion",
-                    "method": "PUT",
-                    "returns": "vocab:propulsion",
-                    "statusCodes": [
-                        {
-                            "description": "If the propulsion entity was created successfully.",
-                            "statusCode": 201
-                        }
-                    ]
-                }
-            ],
-            "supportedProperty": [
-                {
-                    "@type": "SupportedProperty",
-                    "description": "The propulsion",
-                    "property": "http://www.w3.org/ns/hydra/core#member",
-                    "readonly": "false",
-                    "required": "false",
-                    "title": "members",
-                    "writeonly": "false"
-                }
-            ],
-            "title": "propulsionCollection"
         },
         {
             "@id": "vocab:communicationCollection",
@@ -328,6 +285,49 @@ doc = {
             "title": "communicationCollection"
         },
         {
+            "@id": "vocab:propulsionCollection",
+            "@type": "hydra:Class",
+            "description": "A collection of propulsion",
+            "subClassOf": "http://www.w3.org/ns/hydra/core#Collection",
+            "supportedOperation": [
+                {
+                    "@id": "_:propulsion_collection_retrieve",
+                    "@type": "http://schema.org/FindAction",
+                    "description": "Retrieves all propulsion entities",
+                    "expects": "null",
+                    "method": "GET",
+                    "returns": "vocab:propulsionCollection",
+                    "statusCodes": []
+                },
+                {
+                    "@id": "_:propulsion_create",
+                    "@type": "http://schema.org/AddAction",
+                    "description": "Create new propulsion entitity",
+                    "expects": "vocab:propulsion",
+                    "method": "PUT",
+                    "returns": "vocab:propulsion",
+                    "statusCodes": [
+                        {
+                            "description": "If the propulsion entity was created successfully.",
+                            "statusCode": 201
+                        }
+                    ]
+                }
+            ],
+            "supportedProperty": [
+                {
+                    "@type": "SupportedProperty",
+                    "description": "The propulsion",
+                    "property": "http://www.w3.org/ns/hydra/core#member",
+                    "readonly": "false",
+                    "required": "false",
+                    "title": "members",
+                    "writeonly": "false"
+                }
+            ],
+            "title": "propulsionCollection"
+        },
+        {
             "@id": "vocab:EntryPoint",
             "@type": "hydra:Class",
             "description": "The main entry point or homepage of the API.",
@@ -343,46 +343,6 @@ doc = {
                 }
             ],
             "supportedProperty": [
-                {
-                    "hydra:description": "The propulsionCollection collection",
-                    "hydra:title": "propulsioncollection",
-                    "property": {
-                        "@id": "vocab:EntryPoint/propulsion",
-                        "@type": "hydra:Link",
-                        "description": "The propulsionCollection collection",
-                        "domain": "vocab:EntryPoint",
-                        "label": "propulsionCollection",
-                        "range": "vocab:propulsionCollection",
-                        "supportedOperation": [
-                            {
-                                "@id": "_:propulsion_collection_retrieve",
-                                "@type": "http://schema.org/FindAction",
-                                "description": "Retrieves all propulsion entities",
-                                "expects": "null",
-                                "method": "GET",
-                                "returns": "vocab:propulsionCollection",
-                                "statusCodes": []
-                            },
-                            {
-                                "@id": "_:propulsion_create",
-                                "@type": "http://schema.org/AddAction",
-                                "description": "Create new propulsion entitity",
-                                "expects": "vocab:propulsion",
-                                "method": "PUT",
-                                "returns": "vocab:propulsion",
-                                "statusCodes": [
-                                    {
-                                        "description": "If the propulsion entity was created successfully.",
-                                        "statusCode": 201
-                                    }
-                                ]
-                            }
-                        ]
-                    },
-                    "readonly": "true",
-                    "required": "null",
-                    "writeonly": "false"
-                },
                 {
                     "hydra:description": "The communicationCollection collection",
                     "hydra:title": "communicationcollection",
@@ -413,6 +373,46 @@ doc = {
                                 "statusCodes": [
                                     {
                                         "description": "If the communication entity was created successfully.",
+                                        "statusCode": 201
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "readonly": "true",
+                    "required": "null",
+                    "writeonly": "false"
+                },
+                {
+                    "hydra:description": "The propulsionCollection collection",
+                    "hydra:title": "propulsioncollection",
+                    "property": {
+                        "@id": "vocab:EntryPoint/propulsion",
+                        "@type": "hydra:Link",
+                        "description": "The propulsionCollection collection",
+                        "domain": "vocab:EntryPoint",
+                        "label": "propulsionCollection",
+                        "range": "vocab:propulsionCollection",
+                        "supportedOperation": [
+                            {
+                                "@id": "_:propulsion_collection_retrieve",
+                                "@type": "http://schema.org/FindAction",
+                                "description": "Retrieves all propulsion entities",
+                                "expects": "null",
+                                "method": "GET",
+                                "returns": "vocab:propulsionCollection",
+                                "statusCodes": []
+                            },
+                            {
+                                "@id": "_:propulsion_create",
+                                "@type": "http://schema.org/AddAction",
+                                "description": "Create new propulsion entitity",
+                                "expects": "vocab:propulsion",
+                                "method": "PUT",
+                                "returns": "vocab:propulsion",
+                                "statusCodes": [
+                                    {
+                                        "description": "If the propulsion entity was created successfully.",
                                         "statusCode": 201
                                     }
                                 ]
