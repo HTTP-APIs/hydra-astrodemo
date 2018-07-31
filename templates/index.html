@@ -3,15 +3,20 @@
 <title>
 Hydra Demo
 </title>
+
 </head>
 <body>
 <h1>Welcome to hydra demo</h1>
 
 <form method="post">
-url:<input type="text">
-<input type = "submit", value = "Connect">
+url:<input type="text", name='url'><br>
+Endpoints: {{apidoc}}<br>
+<input type = "submit", value = "Connect"><br><br>
+
 &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-query:<input type = "text">
+
+query:<input type = "text",name= 'query'><br>
+Output: {{query_output}}<br>
 <input type = "submit", value = "Run">
 
 </form>
@@ -20,6 +25,8 @@ query:<input type = "text">
 ENDPOINTS:
 
 <br><br>
+
+
 
 <table style = "width:30%">
 <tr>
