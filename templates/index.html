@@ -1,50 +1,59 @@
 <html>
+
 <head>
-<title>
-Hydra Demo
-</title>
+  <title>
+    Hydra Demo
+  </title>
 
 </head>
+
 <body>
-<h1>Welcome to hydra demo</h1>
+  <h1>Welcome to hydra demo</h1>
 
-<form method="post">
-url:<input type="text", name='url'><br>
-Endpoints: {{apidoc}}<br>
-<input type = "submit", value = "Connect"><br><br>
+  <form method="POST">
+    url:
+    <input type="text" , name='url'>
+    <br> Endpoints: {{apidoc}}
+    <br>
+    <input type="submit" , value="Connect">
+    <br>
+    <br>
+  </form>
+  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+  <form method="POST" action="http://localhost:5000/query">
+    query:
+    <input type="text" ,name='query'>
+    <br> Output: {{query_output}}
+    <br>
+    <input type="submit" , value="Run">
 
-&emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+  </form>
+  <br>
+  <br> ENDPOINTS:
 
-query:<input type = "text",name= 'query'><br>
-Output: {{query_output}}<br>
-<input type = "submit", value = "Run">
-
-</form>
-<br><br>
-
-ENDPOINTS:
-
-<br><br>
+  <br>
+  <br>
 
 
 
-<table style = "width:30%">
-<tr>
-<th>put endpoints here</th>
-</tr>
-<tr>
-<th>endpoint1</th>
-</tr>
-<tr>
-<th>endpoint2</th>
-</tr>
-<tr>
-<th>endpoint3</th>
-</tr>
-</table>
+  <table style="width:30%">
+    <tr>
+      <th>put endpoints here</th>
+    </tr>
+    <tr>
+      <th>endpoint1</th>
+    </tr>
+    <tr>
+      <th>endpoint2</th>
+    </tr>
+    <tr>
+      <th>endpoint3</th>
+    </tr>
+  </table>
 
-<p align="center">
-OutPut
-</p>
+  <p align="center">
+    OutPut
+  </p>
 </body>
+
 </html>
