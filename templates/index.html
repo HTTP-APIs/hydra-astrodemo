@@ -2,35 +2,44 @@
 
 <head>
   <title>
+
     AstroDemo
   </title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
 
+
 </head>
 
 <body>
-  <h1>HYDRA AstroDemo</h1>
-  <h4>Satellite Assemblying with Smart Clients</h4>
+  <h1 align="center">Hydra Astrodemo</h1>
+  <h3 align="center">Satellite Assemblying with Smart Clients</h3>
 
   <form method="post">
     url:
-    <input type="text">
-    <input type="submit" , value="Connect"> &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; query:
-    <input type="text">
+    <input type="text" , name='url'>
+    <br> Endpoints: {{apidoc}}
+    <br>
+    <input type="submit" , value="Connect">
+    <br>
+    <br>
+  </form>
+  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
+  <form action="http://localhost:5000/query" method="post">
+    query:
+    <input type="text" , name='query'>
+    <br> Output: {{query_output}}
+    <br>
     <input type="submit" , value="Run">
+
   </form>
   <br>
   <br> ENDPOINTS:
-  <div class="alert alert-success" role="alert">
-    <h4 class="alert-heading">Well done!</h4>
-    <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that
-      you can see how spacing within an alert works with this kind of content.</p>
-    <hr>
-    <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-  </div>
+
   <br>
   <br>
+
+
 
   <table style="width:30%">
     <tr>
