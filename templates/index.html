@@ -3,7 +3,8 @@
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="./index.css">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}">
   <title>
     AstroDemo
   </title>
@@ -31,7 +32,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-default">Query</span>
           </div>
-          <input id="url-input" placeholder="Enter Query Here" type="text" class="form-control" aria-label="Default" />
+          <input id="url-input" name="query" placeholder="Enter Query Here" type="text" class="form-control" aria-label="Default" />
           <input type="submit" value="Send Query" style="margin-left: 6px" class="btn btn-success" />
         </div>
       </form>
@@ -131,7 +132,7 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-7" id="output-body">{{ query_outpu t}}</div>
+  <div class="col-sm-7" id="output-body">{{ query_output}}</div>
   <div class="col-sm-7" id="output-body">{{ apidoc }}</div>
 
 

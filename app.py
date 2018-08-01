@@ -5,14 +5,16 @@ from hydrus.hydraspec import doc_maker
 app = Flask(__name__)
 app.secret_key = "any random string"
 
-@app.route('/')
-def index():
-    return render_template("index.html")
+# @app.route('/')
+# def index():
+#     return render_template("index.html")
     
 @app.route('/', methods= ['GET','POST'])
 def enter_url():
     if request.method == 'GET':
+        # print(render_template("index.html"))
         return render_template("index.html")
+        # return '<html><h1>hello</h1></html>'
     if request.method == 'POST':
         if 'url' in request.form:
             url= request.form['url']
@@ -46,8 +48,10 @@ def enter_query():
             query = request.form['query']
             print(query)
             output = facades.user_query(query)
-        return render_template("index.html", query_output = output)
+            return render_template("index.html", query_output = output)
+        return "NOT FOUND QUERY"
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
+    
 
