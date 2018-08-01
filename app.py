@@ -21,6 +21,7 @@ def enter_url():
             global apidoc
             apidoc = handle_data.load_data(url)
             print(url,apidoc)
+            session['entrypoint'] = apidoc
             return render_template("index.html", apidoc = apidoc)
         elif 'query' in request.form:
             query = request.form['query']
@@ -31,6 +32,7 @@ def enter_url():
 def enter_query():
     print("here")
     print(session['url'])
+    print(session['entrypoint'])
     return "Happy"
 
 #@app.route('/', methods= ['GET','POST'])
