@@ -1,12 +1,12 @@
 <html>
 
 <head>
-  <title>
-
-    AstroDemo
-  </title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="./index.css">
+  <title>
+    AstroDemo
+  </title>
 
 
 </head>
@@ -14,51 +14,135 @@
 <body>
   <h1 align="center">Hydra Astrodemo</h1>
   <h3 align="center">Satellite Assemblying with Smart Clients</h3>
+  <div class="container">
+    <div class="row">
+      <form method="post">
+        <div id="url" class="input-group mb-3 col-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">URL</span>
+          </div>
+          <input id="url-input" name="url" type="text" placeholder="Enter Server URL" class="form-control" aria-label="Default" />
+          <input type="submit" style="margin-left: 6px" class="btn btn-success" value="Connect" />
+        </div>
+      </form>
 
-  <form method="post">
-    url:
-    <input type="text" , name='url'>
-    <br> Endpoints: {{apidoc}}
-    <br>
-    <input type="submit" , value="Connect">
-    <br>
-    <br>
-  </form>
-  &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-  <form action="http://localhost:5000/query" method="post">
-    query:
-    <input type="text" , name='query'>
-    <br> Output: {{query_output}}
-    <br>
-    <input type="submit" , value="Run">
+      <form action="http://localhost:5000/query" method="post">
+        <div id="url" class="input-group mb-3 col-sm">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Query</span>
+          </div>
+          <input id="url-input" placeholder="Enter Query Here" type="text" class="form-control" aria-label="Default" />
+          <input type="submit" value="Send Query" style="margin-left: 6px" class="btn btn-success" />
+        </div>
+      </form>
+    </div>
 
-  </form>
-  <br>
-  <br> ENDPOINTS:
+  </div>
+  <div class="row">
+    <div class="col-sm-4" id="endpoints-header">Endpoints</div>
+    <div class="col-sm-7" id="output-header">OutPut</div>
+  </div>
+  <div class="col-sm-4" id="entrypoint-body">
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+              Entrypoint 1</a>
+          </h4>
+        </div>
+        <div id="collapse1" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <li>Delete sample request</li>
+            <li>PUT sample request</li>
+            <li>POST sample request</li>
+            <li>GET sample request</li>
 
-  <br>
-  <br>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+              Entrypoint 2</a>
+          </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+          <div class="panel-body">
+            <li>Delete sample request</li>
+            <li>PUT sample request</li>
+            <li>POST sample request</li>
+            <li>GET sample request</li>
+
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+              Entrypoint 3</a>
+          </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+          <div class="panel-body">
+            <li>Delete sample request</li>
+            <li>PUT sample request</li>
+            <li>POST sample request</li>
+            <li>GET sample request</li>
+
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+              Entrypoint 4</a>
+          </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+          <div class="panel-body">
+            <li>Delete sample request</li>
+            <li>PUT sample request</li>
+            <li>POST sample request</li>
+            <li>GET sample request</li>
+
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+              Entrypoint 5</a>
+          </h4>
+        </div>
+        <div id="collapse2" class="panel-collapse collapse">
+          <div class="panel-body">
+            <li>Delete sample request</li>
+            <li>PUT sample request</li>
+            <li>POST sample request</li>
+            <li>GET sample request</li>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-7" id="output-body">{{ query_outpu t}}</div>
+  <div class="col-sm-7" id="output-body">{{ apidoc }}</div>
 
 
 
-  <table style="width:30%">
-    <tr>
-      <th>put endpoints here</th>
-    </tr>
-    <tr>
-      <th>endpoint1</th>
-    </tr>
-    <tr>
-      <th>endpoint2</th>
-    </tr>
-    <tr>
-      <th>endpoint3</th>
-    </tr>
-  </table>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
-  <p align="center">
-    OutPut
-  </p>
 </body>
 
 </html>

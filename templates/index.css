@@ -1,0 +1,20 @@
+#endpoints-header {
+  background-color: beige;
+  margin-right: 12px;
+  text-align: center;
+  height: 40px;
+  font-size: x-large;
+}
+#output-header {
+  background-color: beige;
+  margin-left: 16px;
+  text-align: center;
+  height: 15px;
+  height: 40px;
+  font-size: x-large;
+}
+#entrypoint-body {
+  background-color: beige;
+  margin-right: 12px;
+  margin-top: 10px;
+}
