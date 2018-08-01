@@ -16,6 +16,7 @@ def enter_url():
     if request.method == 'POST':
         if 'url' in request.form:
             url= request.form['url']
+            print(request.form)
             session['url'] = url
             handle_data = querying_mechanism.HandleData()
             global apidoc
@@ -31,6 +32,7 @@ def enter_url():
 @app.route('/query',methods=['POST'])
 def enter_query():
     print("here")
+    print(request.form)
     print(session['url'])
     print(session['entrypoint'])
     return "Happy"

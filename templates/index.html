@@ -10,7 +10,7 @@
 <body>
   <h1>Welcome to hydra demo</h1>
 
-  <form method="POST">
+  <form method="post">
     url:
     <input type="text" , name='url'>
     <br> Endpoints: {{apidoc}}
@@ -20,9 +20,9 @@
     <br>
   </form>
   &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;
-  <form method="POST" action="http://localhost:5000/query">
+  <form action="http://localhost:5000/query" method="post">
     query:
-    <input type="text" ,name='query'>
+    <input type="text" , name='query'>
     <br> Output: {{query_output}}
     <br>
     <input type="submit" , value="Run">
