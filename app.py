@@ -44,12 +44,11 @@ def enter_query():
     if request.method == 'POST':
         if 'query' in request.form:
             print("here")
-            print(session['url'])
             query = request.form['query']
             print(query)
             output = facades.user_query(query)
             return render_template("index.html", query_output = output)
-        return "NOT FOUND QUERY"
+
 
 if __name__ == "__main__":
     app.run(debug=True)
