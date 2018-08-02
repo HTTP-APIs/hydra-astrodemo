@@ -3,14 +3,16 @@ Repo containing a demo showcasing the features of open api to hydra parser and a
 
 ## Installation
 
-For execution of the demo you need to run some scripts.
-  
-    ./init.sh
+Before running the server, you should run:
 
-then open new terminal and run:
+    pip3 install -r requirements.txt
+
+For execution of the demo you need to run some scripts.
   
     ./redis_setup.sh
 
-then open again new terminal and run:
+then open new terminal and run:
   
-    ./localhost2
+    python3 app.py
+
+You need to use remote server. (for testing purpose you can use: http://35.224.198.158:8080/api)
