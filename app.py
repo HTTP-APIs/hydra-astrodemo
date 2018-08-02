@@ -21,6 +21,7 @@ def enter_url():
             session['url'] = url
             handle_data = querying_mechanism.HandleData()
             global api_doc
+            global endpoints
             endpoints = handle_data.load_data(url)
             session['entrypoint'] = endpoints
             apidoc1 = handle_data.load_data(url + "/vocab")
@@ -47,7 +48,7 @@ def enter_query():
             query = request.form['query']
             print(query)
             output = facades.user_query(query)
-            return render_template("index.html", query_output = output)
+            return render_template("index.html", apidoc = endpoints, query_output = output)
 
 
 if __name__ == "__main__":
