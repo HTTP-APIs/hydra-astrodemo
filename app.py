@@ -5,6 +5,8 @@ from hydrus.hydraspec import doc_maker
 app = Flask(__name__)
 app.secret_key = "any random string"
 
+history =[]
+
 # @app.route('/')
 # def index():
 #     return render_template("index.html")
@@ -22,6 +24,7 @@ def enter_url():
             handle_data = querying_mechanism.HandleData()
             global api_doc
             global endpoints
+            history.append(url)
             endpoints = handle_data.load_data(url)
             session['entrypoint'] = endpoints
             apidoc1 = handle_data.load_data(url + "/vocab")
@@ -30,7 +33,7 @@ def enter_url():
             facades = querying_mechanism.QueryFacades(api_doc, session['url'],False)
             facades.initialize(True)
             print(url,endpoints)
-            return render_template("index.html", apidoc = endpoints)
+            return render_template("index.html", apidoc = endpoints, history=history)
 #        elif 'query' in request.form:
 #            query = request.form['query']
 #            print(query)
@@ -40,6 +43,7 @@ def enter_url():
 
 @app.route('/query',methods=['GET','POST'])
 def enter_query():
+    global history
     if request.method == 'GET':
         return render_template("index.html")
     if request.method == 'POST':
@@ -47,8 +51,13 @@ def enter_query():
             print("here")
             query = request.form['query']
             print(query)
+            history.append(query)
+            history_rev = history[::-1]
+            if len(history_rev)>5:
+                history_rev.pop()
+                history = history_rev[::-1]
             output = facades.user_query(query)
-            return render_template("index.html", apidoc = endpoints, query_output = output)
+            return render_template("index.html", apidoc = endpoints, query_output = output, history=history_rev)
 
 
 if __name__ == "__main__":
