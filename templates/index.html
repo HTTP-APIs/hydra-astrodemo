@@ -133,8 +133,21 @@
     </div>
   </div>-->
   <div class = "row">
-    <div class="col-sm-4" id="entrypoint-body" style="height:80%;">{{ apidoc }}</div>
-    <div class="col-sm-7" id="entrypoint-body">{{ query_output}}</div>
+    <div class="col-sm-4" id="entrypoint-body" style="height:80%;">
+      {% for element in apidoc %}
+        {% if element != "@type" and element != "@id" and element != "@context" %}
+          <a href = ''><p>{{ element }} </p></a>
+        {% endif %}
+      {% endfor %}</div>
+    <div class="col-sm-7" id="entrypoint-body">
+      {% if query_output %}
+        {% for element in query_output %}
+          <p>{{element}}</p>
+        {% endfor %}
+      {% else %}
+        <p>{{query_output}}</p>
+      {% endif %}
+    </div>
   </div>
   <br><br>
   <div class="col-sm-4" style="background-color: bisque; text-align: center; font-size: x-large; margin-right: 12px; height: 40px;">History</div>

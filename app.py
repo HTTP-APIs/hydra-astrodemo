@@ -31,7 +31,8 @@ def enter_url():
             api_doc = doc_maker.create_doc(apidoc1)
             global facades
             facades = querying_mechanism.QueryFacades(api_doc, session['url'],False)
-            facades.initialize(True)
+            check_url = str.encode(url)
+            querying_mechanism.check_url_exist(check_url,facades)
             print(url,endpoints)
             return render_template("index.html", apidoc = endpoints, history=history)
 #        elif 'query' in request.form:
