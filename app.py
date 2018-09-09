@@ -34,7 +34,7 @@ def enter_url():
             check_url = str.encode(url)
             querying_mechanism.check_url_exist(check_url,facades)
             print(url,endpoints)
-            return render_template("index.html", apidoc = endpoints, history=history)
+            return render_template("query.html", apidoc = endpoints, history=history)
 #        elif 'query' in request.form:
 #            query = request.form['query']
 #            print(query)
@@ -46,7 +46,7 @@ def enter_url():
 def enter_query():
     global history
     if request.method == 'GET':
-        return render_template("index.html")
+        return render_template("query.html")
     if request.method == 'POST':
         if 'query' in request.form:
             print("here")
@@ -58,7 +58,7 @@ def enter_query():
                 history_rev.pop()
                 history = history_rev[::-1]
             output = facades.user_query(query)
-            return render_template("index.html", apidoc = endpoints, query_output = output, history=history_rev)
+            return render_template("query.html", apidoc = endpoints, query_output = output, history=history_rev)
 
 
 if __name__ == "__main__":

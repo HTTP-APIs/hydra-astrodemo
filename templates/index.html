@@ -26,16 +26,17 @@
           <input type="submit" style="margin-left: 6px" class="btn btn-success" value="Connect" />
         </div>
       </form>
+      
 
-      <form action="http://localhost:5000/query" method="post">
-        <div id="url" class="input-group mb-3 col-sm">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Query</span>
-          </div>
-          <input id="url-input" name="query" placeholder="Enter Query Here" type="text" class="form-control" aria-label="Default" />
-          <input type="submit" value="Send Query" style="margin-left: 6px" class="btn btn-success" />
-        </div>
-      </form>
+<!--      <form action="http://localhost:5000/query" method="post">-->
+<!--        <div id="url" class="input-group mb-3 col-sm">-->
+<!--          <div class="input-group-prepend">-->
+<!--            <span class="input-group-text" id="inputGroup-sizing-default">Query</span>-->
+<!--          </div>-->
+<!--          <input id="url-input1" name="query" placeholder="Enter Query Here" type="text" class="form-control" aria-label="Default" />-->
+<!--          <input id="submit_query" type="submit" value="Send Query" style="margin-left: 6px" class="btn btn-success" />-->
+<!--        </div>-->
+<!--      </form>-->
     </div>
 
   </div>
@@ -132,11 +133,24 @@
       </div>
     </div>
   </div>-->
+<!--  <script>-->
+<!--    function put_input(name){-->
+<!--        var input = document.getElementById('url-input1');-->
+<!--        if (name.match("Collection")) {-->
+<!--            name = name + " members"-->
+<!--        }-->
+<!--        else{-->
+<!--        name = name+" properties"-->
+<!--        }-->
+<!--        input.value = name-->
+<!--    }-->
+<!--  </script>-->
   <div class = "row">
     <div class="col-sm-4" id="entrypoint-body" style="height:80%;">
       {% for element in apidoc %}
         {% if element != "@type" and element != "@id" and element != "@context" %}
-          <a href = ''><p>{{ element }} </p></a>
+
+          <p onClick = "put_input('{{element}}')" style="color: #0000FF;">{{element}}</p>
         {% endif %}
       {% endfor %}</div>
     <div class="col-sm-7" id="entrypoint-body">
