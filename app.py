@@ -13,6 +13,8 @@ history =[]
     
 @app.route('/', methods= ['GET','POST'])
 def enter_url():
+    global history
+    history = []
     if request.method == 'GET':
         # print(render_template("index.html"))
         return render_template("index.html")
