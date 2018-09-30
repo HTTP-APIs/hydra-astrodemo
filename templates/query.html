@@ -1,0 +1,93 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/index.css') }}">
+  <title>
+    AstroDemo
+  </title>
+
+
+</head>
+
+
+<body>
+  <h1 align="center">Hydra Astrodemo</h1>
+  <h3 align="center">Satellite Assemblying with Smart Clients</h3>
+  <div class="container">
+    <div class="row" style="margin-right: 0px;">
+      <form method="post" action="http://localhost:5000">
+        <div id="url" class="input-group mb-3 col-sm" style="margin-left:75px;">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">URL</span>
+          </div>
+
+          <input onclick="window.location.href='http://localhost:5000';" style="margin-left: 6px" class="btn btn-success" value="DisConnect" />
+        </div>
+      </form>
+
+    <form name = "query_submit" action="http://localhost:5000/query" method="post">
+        <div id="url" class="input-group mb-3 col-sm" style="margin-left:0px">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Query</span>
+          </div>
+          <input id="url-input1" name="query" placeholder="Enter Query Here" type="text" class="form-control" aria-label="Default" />
+          <input id="submit_query" type="submit" value="Send Query" style="margin-left: 6px" class="btn btn-success" />
+        </div>
+    </form>
+    
+    </div>
+
+  </div>
+  <div class="row" style="margin-right:0px; margin-left:50px;">
+    <div class="col-sm-4" id="endpoints-header">Endpoints</div>
+    <div class="col-sm-7" id="output-header">OutPut</div>
+  </div>
+  
+  
+  <script>
+    function put_input(name,type){
+        var input = document.getElementById('url-input1');
+        if (type == 'endpoint'){
+            if (name.match("Collection")) {
+                name = name + " members"
+            }
+            else{
+            name = "class"+name+" properties"
+            }
+        }
+        input.value = name
+        document.query_submit.submit();
+
+    }
+  </script>
+  <div class = "row" style="margin-right: 0px; margin-left:50px;">
+    <div class="col-sm-4" id="entrypoint-body" style="height:80%;">
+      {% for element in apidoc %}
+        {% if element != "@type" and element != "@id" and element != "@context" %}
+
+          <p title = "@id: '{{element}} members'" onClick = "put_input('{{element}}','endpoint')" style="color: #0000FF;cursor: pointer;">{{element}}</p>
+        {% endif %}
+      {% endfor %}</div>
+    <div class="col-sm-7" id="entrypoint-body" style="margin-left: 16px">
+      {% if query_output %}
+        {% for element in query_output %}
+          <p>{{element}}</p>
+        {% endfor %}
+      {% else %}
+        <p>{{query_output}}</p>
+      {% endif %}
+    </div>
+  </div>
+  <br><br>
+  <div class="col-12" style="background-color: bisque; text-align: center; font-size: x-large; margin-right: 40px; height: 30px;">History</div>
+  <div class="col-12" id="output-body">
+    {% for elt in history %}
+      <p title="@id:'{{elt}}'" onClick = "put_input('{{elt}}','history')" style="color: #0000FF;cursor: pointer;">{{elt}}</p>
+      
+    {% endfor %}
+  </div>
+  
+</body>
