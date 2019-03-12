@@ -1,4 +1,4 @@
 -e git+https://github.com/vaibhavchellani/hydrus.git@fixing_parser#egg=hydrus
 pyyaml
--e git+https://github.com/HTTP-APIs/python-hydra-agent.git@develop#egg=hydra_agent
+-e git+https://github.com/HTTP-APIs/hydra-python-agent.git@develop#egg=hydra_agent
 flask
